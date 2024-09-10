@@ -32,7 +32,6 @@ def get_input():
 
     print(columns, rows)
     word_finder = fox(columns, rows)
-    word_finder.showResults()
     resultsLabel.place(relx=0.5, rely=0.5, anchor="center")
     results = word_finder.showResults()
     print(results)
