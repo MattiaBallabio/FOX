@@ -8,27 +8,21 @@ class fox:
         self.rowList = []
         self.letters = ["F", "O", "X"]
     
-    def nextLetter(self):
+    def nextLetter(self, row):
         for i in range(self.columns):
-            match i:
-                case 0:
-                    self.rowList.append(r.choice(self.letters))
-                case _:
-                    match self.rowList[i-1]:
-                        case "F":
-                            self.rowList.append(r.choice(["O", "X"]))
-                        case "O":
-                            self.rowList.append(r.choice(["F", "X"]))
-                        case "X":
-                            self.rowList.append(r.choice(["F", "O"]))
+            #Use row and column index with random choice to vary letters
+            if (row + i) % 2 == 0:
+                self.rowList.append(r.choice(["F", "O"]))
+            elif (row + i) % 3 == 0:
+                self.rowList.append(r.choice(["O", "X"]))
+            else:
+                self.rowList.append(r.choice(["F", "X"]))
 
     def showResults(self):
-        for x in range(self.rows):
+        for row in range(self.rows):
             self.rowList.clear()
-            self.nextLetter()
+            self.nextLetter(row)
 
-            for i in self.rowList:
-                self.results += i
-            self.results += "\n"
+            self.results += ''.join(self.rowList) + "\n"
 
         return self.results

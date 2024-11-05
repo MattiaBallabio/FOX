@@ -1,5 +1,3 @@
-Program isn't finished yet.
+The program generates an unsolvable crossword puzzle with the word FOX
 
-So far it only generates random letters from the word FOX.
-
-With future updates it will become usable, with the option to either make it solvable or impossible and to choose your own word to play with.
+With future updates, errors such as handling non integer input and such will be fixed, along with better UI and being able to pick your own word.
